@@ -25,6 +25,7 @@ h2{
 .clock div{
     margin: 5px;
     position: relative;
+cursor: pointer;
 }
 
 .clock span{
