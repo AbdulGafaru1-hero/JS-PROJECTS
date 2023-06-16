@@ -1,10 +1,21 @@
-const input = document.querySelector(".input-field")
-// const addBtn = document.querySelector(".btn")
-const todoList = document.querySelector(".todolist")
 
+// const addBtn = document.querySelector(".btn")
+
+const todoList = document.querySelector(".todo-list")
 
  function addBtn(){
- input.value = "";
- todoList.innerHTML = `<li> ${input.value} </li>`
-  
+ let todoList = document.querySelector(".todo-list")
+  let input = document.querySelector(".input-field").value
+ let li = document.createElement("li");
+ let t = document.createTextNode(input);
+ li.appendChild(t);
+ if (input === ''){ 
+  alert("You must write something!");
+} else{
+todoList.appendChild(li)
+
 }
+document.querySelector(".input-field").value = ""
+ }
+
+

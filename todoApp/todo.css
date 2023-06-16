@@ -5,6 +5,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "roboto", sans-serif;
 }
 
 .container{
@@ -19,18 +20,30 @@ body{
     min-width: 400px;
     /* margin: auto; */
 }
-
+h1{
+    color: white;
+    margin:auto;
+    padding: 20px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+.input-container{
+    margin: 0 auto;
+}
 input{
     padding: 10px;
 }
 button{
-    padding: 10px;
+    padding: 10px 20px;
     background-color: orangered;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
     margin: 10px;
     cursor: pointer;
+    border-radius: 3px;
+    color: white;
 }
 
 .todo-list{
@@ -39,8 +52,25 @@ button{
     font-family: "roboto", sans-serif;
     color: white;
     padding: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .todo-list li{
     margin-bottom: 15px;
 }
+.todo-list li:nth-child(odd) {
+    background: lightseagreen;
+    /* width: 100%; */
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+.todo-list li:nth-child(even) {
+    background: orangered;
+    /* width: 100%; */
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+  }
+  
