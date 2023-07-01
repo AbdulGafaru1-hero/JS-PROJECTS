@@ -7,13 +7,9 @@ const networks = document.querySelector(".networks");
 
 window.onload = function() {
     if (localStorage) {
-
-    const Number = result.innerHTML += inputValue.value;
-
-
+const Number = result.innerHTML += inputValue.value;
 generate.addEventListener("click", function() {
     const randomNumber = (parseInt(Math.random().toFixed(7).replace("0.","")));
-
     update(randomNumber);
 })
 
