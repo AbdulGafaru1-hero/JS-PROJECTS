@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phone Number Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <div class="container">
-        
+        <h3 >Generate Phone Number</h3>
+
+          <select name="networks" id="networks" class="networks" onChange="update()">
+
+            <option value="1" class="options mtn">MTN</option>
+           
+           
+            <option value="2" class="options">Vodafone</option>
+
+            <option value="3" class="options">Airtel/Tigo</option>
+
+          </select>
+
+        <input type="text" placeholder="New Number" class="input">
+        <div class="btns">
+       <button class="btn generate">Generate</button>
+       <button class="btn save">Save</button>
+    </div>
+       <h4 class="result">Your Number:</h4>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
