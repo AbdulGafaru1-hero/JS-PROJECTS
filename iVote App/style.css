@@ -1,0 +1,93 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 50px 100px;
+    display: flex;
+    background: ghostwhite;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+h1{
+    text-transform: uppercase;color: lightseagreen;
+}
+p{
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+ background: lightseagreen;
+ color: white;
+}
+.box-container{
+    gap: 40px;
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    justify-content: center;
+}
+.vote-box{
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 7px 12px 17px -8px rgba(0,0,0,0.18);
+    width: 300px;
+   
+}
+.vote-box > img{
+    height: 160px;
+    width: 210px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.vote-box > h3{
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.box-bottom{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+ 
+}
+
+.box-bottom > input{
+    padding: 8px;
+    width: 100%;
+border: 2px solid lightseagreen;
+}
+
+.box-bottom > button{
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    background: lightseagreen;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+@media screen  and (max-width: 768px){
+    .box-container{
+        flex-direction: column;
+    }
+    .vote-box > img{
+        width: 300px;
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+    }
+}
