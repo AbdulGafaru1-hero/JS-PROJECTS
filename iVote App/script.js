@@ -3,9 +3,12 @@ const angularTotal = document.querySelector(".angular-input")
 const reactTotal = document.querySelector(".react-input")
 const vueTotal = document.querySelector(".vue-input")
 
-let Avotes = 0;
-let Rvotes = 0;
-let Vvotes = 0;
+
+let votes = {
+    react: 0,
+    angular: 0,
+    vue: 0,
+}
 
 // For Each Method did not work
 
@@ -22,33 +25,31 @@ let Vvotes = 0;
 //     })
 // })
 
+// Allow user to vote only once
+
 let clicked = false;
 
-function alreadyVoted() {
-    let voted = false;
-    if(!voted) {
-        voted = true;
-    }
-}
 
-function angular() {
+function voteAngular({votes}) {
     if(!clicked) {
-        let newVote = Avotes += 1;
+        const newVote = votes.angular += 1;
         angularTotal.value = newVote;
         clicked = true;
-        alreadyVoted(voted) 
     }
 }
 
-function react () {
+
+function voteReact ({votes}) {
     if(!clicked) {
-     reactTotal.value = Rvotes += 1;
+     reactTotal.value = votes.react += 1;
+     localStorage.setItem("angular", JSON.stringify(angularTotal.value = newVote))
         clicked = true; 
+
     }
 }
-function vue() {
+function voteVue({votes}) {
     if (!clicked) {
-        vueTotal.value = Vvotes += 1;
+        vueTotal.value = votes.vue += 1;
         clicked = true;     
     }
 }

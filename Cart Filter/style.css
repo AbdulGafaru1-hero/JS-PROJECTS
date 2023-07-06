@@ -1,0 +1,120 @@
+body{
+    padding: 0 180px;
+    font-family: sans-serif;
+    align-items: center;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    background-color: pink;
+    border-radius: 10px;
+    top: 5px;
+}
+.header > h1{
+font-weight: 800;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif!important;
+color: indigo;
+}
+.cart-icon{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+}
+.cart-icon >p{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    font-weight: bold;
+    background: indigo;
+    color: white;
+    padding: 2px;
+    border-radius: 50%;
+    margin-left: 46px;
+    margin-bottom: 50px;
+}
+.cart-icon > img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+body .desc{
+text-align: center;
+padding: 50px;
+width: 500px;
+margin: 0 auto;
+}
+
+.filter-buttons{
+    padding: 20px;
+    align-items: center;
+   width: 500px;
+   margin: 0 auto;
+    margin-bottom: 50px;
+    gap: 20px;
+    display: flex;
+}
+.btn{
+    padding: 10px 20px;
+    font-weight: bold;
+    background: indigo;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.active{
+    background: pink;
+}
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
+    gap: 30px;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(253, 249, 249);
+    border-radius: 20px;
+    box-shadow: 7px 10px 14px -8px rgba(0,0,0,0.18);
+}
+.product>img{
+    height: 150px;
+    object-fit: contain;
+}
+.product > h3{
+    color: black;
+}
+
+.cart-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-bottom > h4{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.addToCart{
+    background-color: indigo;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 50px;
+    color: wheat;
+    cursor: pointer;
+}
