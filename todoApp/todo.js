@@ -26,7 +26,8 @@ const todoList = document.querySelector(".todo-list")
   if (input === '') {
     alert("You must write something!");
   } else {
-    todoList.innerHTML += `<li>${input}</li>`
+    todoList.innerHTML += `<li>${input} 
+     </li>`
   }
 document.querySelector(".input-field").value = ""
  }
