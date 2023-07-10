@@ -2,6 +2,7 @@ body{
     padding: 0 180px;
     font-family: sans-serif;
     align-items: center;
+    margin: 0;
 }
 .header{
     display: flex;
@@ -11,6 +12,7 @@ body{
     background-color: pink;
     border-radius: 10px;
     top: 5px;
+    z-index: 1;x
 }
 .header > h1{
 font-weight: 800;
@@ -52,6 +54,22 @@ width: 500px;
 margin: 0 auto;
 }
 
+
+.heroImage{
+    border-radius: 10px;
+    width: 900px;
+    height:350px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
 .filter-buttons{
     padding: 20px;
     align-items: center;
@@ -79,6 +97,7 @@ margin: 0 auto;
     flex-wrap: wrap;
     max-width: 900px;
     gap: 30px;
+    margin-bottom: 50px;
 }
 .product{
     display: flex;
@@ -115,25 +134,194 @@ margin: 0 auto;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    margin-left: 50px;
+    margin-left: 35px;
     color: wheat;
     cursor: pointer;
 }
 
   .showCart{
-    background-color: bisque;
+    background-color: indigo;
     width: 200px;
     height: 300px;
     border-radius: 10px;
     position: absolute;
     top: 20px;
     right: 20px;
-    display: none;
-
   }
 
-  .showCart > p{
+  .total{
     position: inherit;
-    right: 15px;
+    left: 15px;
+    bottom: 0;
     font-weight: bold;
+    font-size: 20px;
+   color: white;
+  }
+
+  .info{
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .hide{
+    display: none;
+  }
+  .faq{
+    margin-top: 150px;
+  }
+  .faq-title{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 900;
+  }
+  .content-container{
+    padding: 0px 40px 0 40px;
+    background-color:rgb(255, 251, 251);
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: 7px 6px 8px -8px rgba(0,0,0,0.18);
+    /* transition: 0.5s; */
+}
+
+.question{
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    align-items: center;
+    /* transition: 0.5s; */
+}
+
+.question::after{
+content: "+";
+position: absolute;
+right: -5px;
+font-size:30px;
+
+}
+
+.answer{
+    padding: 5px 20px;
+    line-height: 22px;
+
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+
+.faq .content-container.showAnswer .answer{
+height: 100px;
+}
+.faq .content-container.showAnswer .question::after{
+content: "_";
+font-size: 30px;
+transition: 0.5s;
+}
+
+  @media only screen and (max-width: 768px) {
+    body{
+        border: 2px solid red;
+        padding: 0 100px;
+        align-items: center;
+    }
+    .desc{
+        text-align: center;
+        padding-right: 50px;
+        }
+        .header{
+            top: 5px;
+        }
+        .product{
+            width: 200px;
+        }
+        .products{
+            max-width: 700px;
+            align-items: center;
+          margin-left: 50px;
+        }
+        .product>img{
+            overflow: hidden;
+           height: 140px;
+        }
+        .filter-buttons{
+            margin-left: 80px;
+        }
+        
+.heroImage{
+    width: 600px;
+}
+  }
+
+  @media only screen and (max-width: 425px){
+    body{
+        border: 2px solid red;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    body>.desc{
+       max-width: 350px;
+        margin-left: -30px;
+        }
+        .filter-buttons{
+           margin-left: -20px;
+        }
+        .header{
+            width: 400px
+        }
+        .products{
+            gap: 50px;
+           margin-right: 50px;
+        }
+        .product{
+            width: 300px;
+        }
+        .product>img{
+            height: 250px;
+
+        }   
+        .faq{
+            margin-top: 50px;
+        }
+        .content-container{
+            padding: 20px;
+        }
+        .faq-title{
+            font-size: 18px;
+        }
+        .question{
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+        }
+        .heroImage{
+            width: 380px;
+            height: 200px;
+        }
+  }
+
+  @media only screen and (max-width:375px) {
+    .header{
+        width: 350px
+    }
+    body>.desc{
+        max-width: 320px;
+         margin-left: -50px;
+         }
+
+         .filter-buttons{
+           overflow-x: scroll; 
+           max-width: 350px;
+         }
+         .heroImage{
+            width: 350px;
+            /* height: 200px; */
+        }
   }

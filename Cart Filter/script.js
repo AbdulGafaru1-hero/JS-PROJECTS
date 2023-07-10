@@ -42,8 +42,8 @@ const products = [
     price: "$13",
   },
   {
-    name: "Designer T-shirt",
-    img: "https://www.seekpng.com/png/detail/61-611401_read-more-png-t-shirt-design.png",
+    name: "Designer Shirt",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7oHMGpe0BoX09JKstWcjy0QtmzMg64GXffb6ZuZO4ZOcbu7uX6o1ZVh_A6d9U-3UMHq4&usqp=CAU",
     category: "shirts",
     price: "$6",
   },
@@ -60,16 +60,17 @@ const cartIcon = document.querySelector(".cart-icon");
 const price = document.querySelector(".price");
 const productContainer = document.querySelector(".products");
 const filterButtons = document.querySelectorAll(".btn");
-let showCart = document.querySelector(".showCart");
+const showCart = document.querySelector(".showCart");
 
 let cart = 0;
 
 function addToCart() {
   cart = cart + 1;
   cartIcon.innerHTML += `<p>${cart}</p>`;
-  console.log("clicked");
-  //  showCart.textContent += productName + productPrice;
+  
 }
+
+
 
 function renderProducts(products) {
   let template = "";
@@ -97,6 +98,7 @@ filterButtons.forEach((button) => {
     }
     // add active class to the clicked filter
     event.target.classList.add("active");
+
     // get the clicked filter category
     const filterValue = event.target.dataset.filter;
     const filteredProducts = products.filter(
@@ -111,13 +113,33 @@ filterButtons.forEach((button) => {
 });
 
 cartIcon.addEventListener("click", function () {
-  if ((showCart.style.display = "none")) {
-    showCart.style.display = "block";
+    const activeCart = document.querySelector(".showCart.hide");
+  if (activeCart) {
+    showCart.classList.remove("hide");;
   } else {
-    showCart.style.display = "none";
+    showCart.classList.add("hide");;
   }
 });
 
 window.addEventListener("DOMContentLoaded", function () {
   renderProducts(products);
 });
+
+
+// FAQ
+
+const contentContainer = document.getElementsByClassName("content-container")
+
+
+for( i = 0; i < contentContainer.length; i++) {
+    contentContainer[i].addEventListener("click", function(){
+        this.classList.toggle("showAnswer")
+    })
+}
+
+
+
+
+
+
+
