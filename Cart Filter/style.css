@@ -54,6 +54,40 @@ width: 500px;
 margin: 0 auto;
 }
 
+.product-info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+   border-bottom: 2px solid pink;
+   max-width: 220px;
+   margin-left: 10px;
+   margin-top: 10px;
+} 
+.delete{
+    margin-left:20px;
+    font-weight: bold;
+    color: red;
+}
+.product-image {
+    height: 30px;
+    background-color: white;
+    border-radius: 10px;
+   margin: 0 5px;
+   padding: 5px;
+   margin-right: 5px;
+}
+.product-name{
+color: white;
+margin-right: 10px;
+font-weight: normal;
+font-size: 16px;
+}
+.product-price{
+    font-weight: 900;
+    color: pink;
+}
 
 .heroImage{
     border-radius: 10px;
@@ -141,19 +175,20 @@ margin: 0 auto;
 
   .showCart{
     background-color: indigo;
-    width: 200px;
+    width: 250px;
     height: 300px;
     border-radius: 10px;
     position: absolute;
     top: 20px;
     right: 20px;
+    padding: 10px;
   }
 
   .total{
     position: inherit;
     left: 15px;
     bottom: 0;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 20px;
    color: white;
   }
