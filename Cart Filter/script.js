@@ -68,7 +68,7 @@ const addCart = document.querySelectorAll(".addToCart");
 const cartIcon = document.querySelector(".cart-icon");
 const price = document.querySelector(".price");
 const productContainer = document.querySelector(".products");
-const filterButtons = document.querySelectorAll(".btn");
+// const filterButtons = document.querySelectorAll(".btn");
 const showCart = document.querySelector(".showCart");
 const cartTotal = document.querySelector(".cartNumber");
 
@@ -192,9 +192,10 @@ function renderProducts(products) {
   });
   productContainer.innerHTML = template;
 }
+const filterButtons = document.querySelector(".filter-buttons")
 
-filterButtons.forEach((button) => {
-  button.addEventListener("click", function (event) {
+  filterButtons.addEventListener("click", function (event) {
+    if (event.target.tagName === "BUTTON") {
     // get the current active filter
     const activeFilter = document.querySelector(".btn.active");
     // if active filter exists remove the active class
@@ -214,8 +215,9 @@ filterButtons.forEach((button) => {
     } else {
       renderProducts(filteredProducts);
     }
+  }
   });
-});
+
 
 // Cart compotnent
 cartIcon.addEventListener("click", function () {
