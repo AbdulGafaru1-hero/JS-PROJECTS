@@ -61,16 +61,50 @@ const price = document.querySelector(".price");
 const productContainer = document.querySelector(".products");
 const filterButtons = document.querySelectorAll(".btn");
 const showCart = document.querySelector(".showCart");
+const cartTotal = document.querySelector(".cartNumber");
 
-let cart = 0;
+
 
 function addToCart() {
-  cart = cart + 1;
-  cartIcon.innerHTML += `<p>${cart}</p>`;
-  
+        cartNumbers(products[i]);
+        // console.log(products);
+        ;
 }
 
 
+
+
+// Onload products from local storage should remain in cart
+function onLoad(){
+    let ProductNumbers = localStorage.getItem("cartNumbers");
+
+    if(ProductNumbers) {
+        cartTotal.textContent = ProductNumbers;
+    }
+}
+onLoad();
+
+function cartNumbers(product){
+    let ProductNumbers = localStorage.getItem("cartNumbers");
+
+    ProductNumbers = parseInt(ProductNumbers);
+
+    if( ProductNumbers ) {
+        localStorage.setItem("cartNumbers", ProductNumbers + 1);
+        cartTotal.textContent = ProductNumbers + 1;
+    } else {
+        localStorage.setItem("cartNumbers", 1);
+        cartTotal.textContent = 1;
+    }
+    setAddedItems(product);
+}
+
+function setAddedItems(product) {
+    // console.log("my product is", product);
+    let cartItems = {[product.name]: product}
+
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems))
+}
 
 function renderProducts(products) {
   let template = "";

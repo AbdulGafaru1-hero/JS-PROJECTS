@@ -12,7 +12,7 @@ body{
     background-color: pink;
     border-radius: 10px;
     top: 5px;
-    z-index: 1;x
+    z-index: 1;
 }
 .header > h1{
 font-weight: 800;
@@ -227,7 +227,6 @@ transition: 0.5s;
 
   @media only screen and (max-width: 768px) {
     body{
-        border: 2px solid red;
         padding: 0 100px;
         align-items: center;
     }
@@ -261,17 +260,21 @@ transition: 0.5s;
 
   @media only screen and (max-width: 425px){
     body{
-        border: 2px solid red;
         display: flex;
         flex-direction: column;
         padding: 0 20px;
+      
     }
     body>.desc{
        max-width: 350px;
         margin-left: -30px;
+        padding: 30px 20px;
         }
         .filter-buttons{
-           margin-left: -20px;
+           margin-left: -7px;
+           overflow-x: scroll;
+           max-width: 400px;
+       padding: 0;
         }
         .header{
             width: 400px
@@ -285,6 +288,7 @@ transition: 0.5s;
         }
         .product>img{
             height: 250px;
+            width: 400px;
 
         }   
         .faq{
@@ -313,15 +317,22 @@ transition: 0.5s;
     }
     body>.desc{
         max-width: 320px;
-         margin-left: -50px;
+        margin: 0;
+        padding: 30px 20px;
+        padding-right: -20px;
          }
 
          .filter-buttons{
            overflow-x: scroll; 
-           max-width: 350px;
+           max-width: 300px;
          }
          .heroImage{
-            width: 350px;
+            width: 320px;
             /* height: 200px; */
         }
+        .product>img{
+            height: 250px;
+            width: 300px;
+
+        }  
   }
