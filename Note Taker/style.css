@@ -63,13 +63,19 @@ body{
     background-color: black;
   
 }
-
+.note{
+    display: flex;
+    flex-direction: column;
+}
 .notes{
     background-color: white;
     padding: 20px 40px;
     margin: 50px 0;
     width: 500px;
     border-radius: 5px;
+   border: 2px solid red;
+display: flex;
+flex-direction: column;
 }
 .noteTitle{
     color: darkcyan;
