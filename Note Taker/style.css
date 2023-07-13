@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    padding: 0 200px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    background: rgb(244, 252, 252);
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title{
+    text-align: center;
+    background-color: darkcyan;
+    padding: 10px;
+    color: lightcyan;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 5px;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 400px;
+    gap: 20px;
+    padding: 10px;
+}
+.titleInput{
+    padding: 10px;
+    border: 1.5px solid darkcyan;
+    border-radius: 5px;
+}
+
+.detailsInput{
+    padding: 10px;
+    height: 200px;
+}
+
+.addNote{
+    padding: 10px;
+    background-color: darkcyan;
+    border: none;
+    color: lightcyan;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+.addNote:hover{
+    background-color: black;
+  
+}
+
+.notes{
+    background-color: white;
+    padding: 20px 40px;
+    margin: 50px 0;
+    width: 500px;
+    border-radius: 5px;
+}
+.noteTitle{
+    color: darkcyan;
+    padding: 10px 20px;
+}
+
+.noteDetails{
+    padding: 20px;
+    line-height: 30px;
+}
+
+.btns{
+padding: 20px;
+display: flex;
+gap: 30px;
+justify-content: center;
+
+}
+
+.edit,
+.delete{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.edit{
+  background-color: rgb(43, 223, 223);
+  color: white;
+}
+
+.delete{
+    background-color: rgb(243, 46, 46);
+    color: white;
+}
+
+@media only screen and (max-width: 425px) {
+    body{
+        border:  2px solid red;
+    }
+    .container{
+        align-items: center;
+        /* padding: 20px; */
+    }
+    .title{
+        width: 95vw;
+        margin: 0;
+    }
+ 
+    .notes{
+        width: 380px;
+        padding: 10px;
+    }
+    .noteDetails{
+     margin-top: -10px;
+     line-height: 25px;
+    }
+    .btns{
+        padding: 0;
+        gap: 20px;
+        width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+   .form, .notes{
+    width: 360px;
+   }
+
+   .title{
+    width: 100%;
+   }
+
+  }
