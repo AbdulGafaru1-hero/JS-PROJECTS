@@ -61,27 +61,35 @@ body{
 }
 .addNote:hover{
     background-color: black;
+    color: white;
   
 }
+.yn{
+    margin-top: 50px;
+}
 .note{
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 7px;
+    border:  1px solid darkcyan;
 }
 .notes{
-    background-color: white;
     padding: 20px 40px;
-    margin: 50px 0;
+    margin-bottom: 50px;
     width: 500px;
     border-radius: 5px;
-   border: 2px solid red;
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .noteTitle{
     color: darkcyan;
     padding: 10px 20px;
+    margin-bottom: -20px;
 }
-
+.noteNumber{
+    color: gray;
+}
 .noteDetails{
     padding: 20px;
     line-height: 30px;
@@ -92,7 +100,6 @@ padding: 20px;
 display: flex;
 gap: 30px;
 justify-content: center;
-
 }
 
 .edit,
