@@ -12,9 +12,8 @@ addNote.addEventListener("click", function(event){
 
     if (titleInput.value == "" || detailsInput.value == "") {
         alert("Please write something!")
-        return false;
     };
-    
+
     let notes = localStorage.getItem("notes");
     if (notes == null) {
         newNotes = [];
@@ -28,10 +27,9 @@ addNote.addEventListener("click", function(event){
     };
 newNotes.push(notesObj);
    localStorage.setItem("notes", JSON.stringify(newNotes));
-     titleInput.value = ""
+    titleInput.value = ""
     detailsInput.value = ""
-    displayNote();
-
+   displayNote();
 })
 
 
@@ -66,8 +64,10 @@ if (newNotes.length != 0) {
     note.innerHTML = noteTemplate;
 } else {
     note.innerHTML = "No Notes Added yet.";
-}}
+}
 
+}
+displayNote();
 
 function deleteNote(index) {
     let confirmDelete = confirm("You are about to delete this Note!");
@@ -79,10 +79,14 @@ function deleteNote(index) {
     } else {
         newNotes = JSON.parse(notes);
     }
+    
     newNotes.splice(index, 1);
+
     localStorage.setItem("notes", JSON.stringify(newNotes));
     displayNote();
-    }}
+    }
+}
+
 
 
 function editNote(index) {
@@ -96,17 +100,14 @@ if (titleInput.value !== "" || detailsInput.value !== "") {
     } else {
         newNotes = JSON.parse(notes);
     }
-
-newNotes.findIndex((note,index) => {
+newNotes.findIndex((note, index) =>{
     titleInput.value = note.title;
     detailsInput.value = note.text;
-    addNote.innerText = "Update Note";
-    
 })
-
 newNotes.splice(index, 1);
 localStorage.setItem("notes", JSON.stringify(newNotes));
 displayNote();
 }
 
-displayNote();
+
+

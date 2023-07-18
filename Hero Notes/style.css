@@ -9,6 +9,8 @@ body{
     /* align-items: center; */
     justify-content: center;
     background: rgb(244, 252, 252);
+    min-width: 300px;
+   
 }
 .container{
   display: flex;
@@ -27,13 +29,16 @@ body{
     font-weight: 900;
     letter-spacing: 5px;
     width: 100%;
+    
 }
-
+.form, .notes{
+    width: 360px;
+   }
 .form{
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    width: 400px;
+    /* width: 400px; */
     gap: 20px;
     padding: 10px;
 }
@@ -74,11 +79,14 @@ body{
     border-radius: 7px;
     border:  1px solid darkcyan;
 }
+.title{
+    width: 100%;
+   }
 .notes{
     background-color: rgb(249, 255, 255);
     padding: 20px 40px;
     margin-bottom: 50px;
-    width: 500px;
+    /* width: 500px; */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -100,7 +108,7 @@ body{
 .btns{
 padding: 20px;
 display: flex;
-gap: 30px;
+gap: 20px;
 justify-content: center;
 }
 
@@ -151,7 +159,7 @@ justify-content: center;
     }
   }
 
-  @media only screen and (max-width: 375px) {
+  /* @media only screen and (max-width: 375px) {
    .form, .notes{
     width: 360px;
    }
@@ -160,4 +168,4 @@ justify-content: center;
     width: 100%;
    }
 
-  }
+  } */
