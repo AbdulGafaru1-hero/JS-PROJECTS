@@ -16,6 +16,7 @@ body {
 
 h1 {
     text-align: center;
+    color: darkgreen;
 }
 
 .budget-form {
@@ -36,14 +37,17 @@ input {
 }
 
 button {
-    background-color: #007bff;
+    background-color: green;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
 }
-
+button:hover{
+    background-color: darkgreen;
+}
 .transactions, .balance {
     margin-bottom: 20px;
 }
