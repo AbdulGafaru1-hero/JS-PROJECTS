@@ -7,7 +7,8 @@ const noteDetails = document.querySelector(".noteDetails");
 
 
 
-addNote.addEventListener("click", function(event){
+addNote.addEventListener("click", addNoteHandler);
+function addNoteHandler(event){
    event.preventDefault();
    const id = new Date().getTime().toString();
 console.log(id);
@@ -34,7 +35,7 @@ newNotes.push(notesObj);
     detailsInput.value = ""
     displayNote();
 
-})
+}
 
 
 function displayNote() {
@@ -92,12 +93,40 @@ let notes = localStorage.getItem("notes");
 if (titleInput.value !== "" || detailsInput.value !== "") {
     return alert("Please clear input before editing note");
 }
- 
     if (notes == null) {
         newNotes = [];
     } else {
         newNotes = JSON.parse(notes);
     }
+
+    if (index >= 0 && index < newNotes.length) {
+        const note = newNotes[index];
+        titleInput.value = note.title;
+        detailsInput.value = note.text;
+        addNote.innerText = "Update Note";
+
+    } else {
+        alert("Invalid note index");
+    }
+
+// newNotes.filter(note  => {
+//     note.addEventListener("click", ()=> {
+// if (note.id === e.target.id) {
+//     titleInput.value = note.title;
+//     detailsInput.value = note.text;
+//     addNote.innerText = "Update Note";
+
+// }})
+// });
+
+newNotes.splice(index, 1);
+localStorage.setItem("notes", JSON.stringify(newNotes));
+displayNote();
+}
+
+displayNote();
+
+
 
 // newNotes.findIndex(note => {
 //     titleInput.value = note.title;
@@ -105,21 +134,3 @@ if (titleInput.value !== "" || detailsInput.value !== "") {
 //     addNote.innerText = "Update Note";
    
 // })
-
-
-newNotes.filter(note  => {
-    note.addEventListener("click", ()=> {
-if (note.id === e.target.id) {
-    titleInput.value = note.title;
-    detailsInput.value = note.text;
-    addNote.innerText = "Update Note";
-
-}})
-});
-
-// newNotes.splice(index, 1);
-localStorage.setItem("notes", JSON.stringify(newNotes));
-displayNote();
-}
-
-displayNote();
