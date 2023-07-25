@@ -1,23 +1,4 @@
 
-// const addBtn = document.querySelector(".btn")
-
-// const todoList = document.querySelector(".todo-list")
-
-//  function addBtn(){
-//  let todoList = document.querySelector(".todo-list")
-//   let input = document.querySelector(".input-field").value
-//  let li = document.createElement("li");
-//  let t = document.createTextNode(input);
-//  li.appendChild(t);
-//  if (input === ''){ 
-//   alert("You must write something!");
-// } else{
-// todoList.appendChild(li)
-
-// }
-// document.querySelector(".input-field").value = ""
-//  }
-
 
 const todoList = document.querySelector(".todo-list")
 
@@ -27,9 +8,17 @@ const todoList = document.querySelector(".todo-list")
     alert("You must write something!");
   } else {
     todoList.innerHTML += `<li>${input} 
-     </li>`
+    <span class="material-symbols-outlined delete">
+    delete
+    </span></li>`
   }
-document.querySelector(".input-field").value = ""
- }
+    input.value = "";
+ };
 
+todoList.forEach(element =>  {
+  element.addEventListener("click", function(event){
+  if (event.target.classList.contains("delete")) {
+      event.target.parentElement.remove();
+    } } )
+  });
 

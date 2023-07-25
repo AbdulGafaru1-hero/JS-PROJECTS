@@ -9,7 +9,8 @@ const noteDetails = document.querySelector(".noteDetails");
 
 addNote.addEventListener("click", function(event){
    event.preventDefault();
-
+   const id = new Date().getTime().toString();
+console.log(id);
     if (titleInput.value == "" || detailsInput.value == "") {
         alert("Please write something!")
         return false;
@@ -25,6 +26,7 @@ addNote.addEventListener("click", function(event){
     let notesObj = {
         title: titleInput.value,
         text: detailsInput.value,
+        id: id,
     };
 newNotes.push(notesObj);
    localStorage.setItem("notes", JSON.stringify(newNotes));
@@ -56,7 +58,7 @@ function displayNote() {
          <button class="edit" id=${index} onclick="editNote(this.id)">Edit Note <span class="material-symbols-outlined">
             edit_note
             </span></button>
-         <button class="delete" id=${index} onclick="deleteNote(this.id)"> Delete Note<span class="material-symbols-outlined">
+         <button class="delete" id=${index} onclick="deleteNote(this)"> Delete Note<span class="material-symbols-outlined">
             delete
             </span></button>
             </div>
@@ -97,14 +99,25 @@ if (titleInput.value !== "" || detailsInput.value !== "") {
         newNotes = JSON.parse(notes);
     }
 
-newNotes.findIndex((note,index) => {
+// newNotes.findIndex(note => {
+//     titleInput.value = note.title;
+//     detailsInput.value = note.text;
+//     addNote.innerText = "Update Note";
+   
+// })
+
+
+newNotes.filter(note  => {
+    note.addEventListener("click", ()=> {
+if (note.id === e.target.id) {
     titleInput.value = note.title;
     detailsInput.value = note.text;
     addNote.innerText = "Update Note";
-    
-})
 
-newNotes.splice(index, 1);
+}})
+});
+
+// newNotes.splice(index, 1);
 localStorage.setItem("notes", JSON.stringify(newNotes));
 displayNote();
 }
